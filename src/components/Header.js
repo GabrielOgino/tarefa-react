@@ -14,7 +14,7 @@ function Header({ setPagina }) {
     }}>
       <h1 style={{ fontSize: '28px', marginBottom: '10px' }}>✨ Multi-App React</h1>
       <nav style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', justifyContent: 'center' }}>
-        {['To-Do List', 'Contador', 'Jogo da Velha', 'Calculadora', 'Buscar CEP'].map((label, i) => (
+        {['todo', 'Contador', 'Jogo da Velha', 'Calculadora', 'Buscar CEP'].map((label, i) => (
           <button
             key={i}
             onClick={() => setPagina(label.toLowerCase().replace(/ /g, ""))}

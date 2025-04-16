@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Header from "./components/Header";
-import ToDoList from "./components/ToDoList";
+import ToDoList from './components/ToDoList';
 import Contador from "./components/Contador";
 import JogoDaVelha from "./components/JogoDaVelha";
 import Calculadora from "./components/Calculadora";
