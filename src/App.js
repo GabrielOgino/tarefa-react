@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Header from "./components/Header";
+import ToDoList from "./components/ToDoList";
+import Contador from "./components/Contador";
+import JogoDaVelha from "./components/JogoDaVelha";
+import Calculadora from "./components/Calculadora";
+import BuscarCEP from "./components/BuscarCEP";
 
 function App() {
+  const [pagina, setPagina] = useState("home");
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ fontFamily: 'Poppins, sans-serif', minHeight: '100vh', backgroundColor: '#f4f6fb' }}>
+      <Header setPagina={setPagina} />
+      <main style={{ padding: '32px 24px', maxWidth: '800px', margin: '0 auto' }}>
+        {pagina === "todo" && <ToDoList />}
+        {pagina === "contador" && <Contador />}
+        {pagina === "jogodavelha" && <JogoDaVelha />}
+        {pagina === "calculadora" && <Calculadora />}
+        {pagina === "buscarcep" && <BuscarCEP />}
+        {pagina === "home" && <p style={{ fontSize: '18px' }}>👋 Escolha uma funcionalidade no menu acima para começar!</p>}
+      </main>
     </div>
   );
 }
